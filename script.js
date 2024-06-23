@@ -1,6 +1,5 @@
 let numeroSecreto = generarNumeroSecreto();
-let intentos = 1;
-console.log(numeroSecreto);
+intentos = 1;
 
 function asignarTextoElemento(elemento, texto) {
   let elementoHTML = document.querySelector(elemento);
@@ -9,7 +8,6 @@ function asignarTextoElemento(elemento, texto) {
 
 function verificarIntento() {
   let numeroDeUsuario = parseInt(document.getElementById("valorUsuario").value);
-  document.getElementById("reiniciar").removeAttribute("disabled");
   //acierta
   if (numeroDeUsuario == numeroSecreto) {
     asignarTextoElemento(
@@ -18,6 +16,7 @@ function verificarIntento() {
         intentos === 1 ? "intento" : "intentos"
       }`
     );
+    document.getElementById("reiniciar").removeAttribute("disabled");
   } else {
     //falla
     if (numeroDeUsuario < numeroSecreto) {
@@ -33,24 +32,26 @@ function verificarIntento() {
 function limpiarCaja() {
   document.getElementById("valorUsuario").value = "";
 }
+function generarNumeroSecreto() {
+  return Math.floor(Math.random() * 10) + 1;
+}
 
-function mensajesIniciales() {
+function condicionesIniciales() {
   asignarTextoElemento("h1", "Adivina el número");
   asignarTextoElemento("p", "Selecciona un número de 1 a 10");
+  intentos = 1;
+  numeroSecreto = generarNumeroSecreto();
+  console.log(numeroSecreto);
 }
 function volverAIniciar() {
   //limpiar input
   document.getElementById("valorUsuario").value = "";
   //reiniciar intentos
-  intentos = 1;
-  //volver aponer parrafo
-  mensajesIniciales();
+  //volver a poner parrafo
   //generar numero aleatorio
-
+  condicionesIniciales();
   //desabilitar boton
-}
-function generarNumeroSecreto() {
-  return Math.floor(Math.random() * 10) + 1;
+  document.getElementById("reiniciar").setAttribute("disabled", true);
 }
 
-mensajesIniciales();
+condicionesIniciales();
