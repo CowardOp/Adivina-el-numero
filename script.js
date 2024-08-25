@@ -1,7 +1,9 @@
+import bootstrap from "bootstrap";
+
 let numeroSecreto = 0;
 intentos = 0;
 let numeroSorteado = [];
-let numeroMaximo = parseInt(prompt("selecciona un numero maximo"));
+// let numeroMaximo = parseInt(prompt("selecciona un numero maximo"));
 
 function asignarTextoElemento(elemento, texto) {
   let elementoHTML = document.querySelector(elemento);
