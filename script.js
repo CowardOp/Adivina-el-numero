@@ -41,7 +41,7 @@ function verificarIntento() {
   } else {
     if (numeroDeUsuario < numeroSecreto) {
       asignarTextoElemento("p", "Fallaste, el número es mayor");
-    } else if (numeroDeUsuario <= 0 || isNaN(numeroDeUsuario)) {
+    } else if (numeroDeUsuario === 0 || isNaN(numeroDeUsuario)) {
       asignarTextoElemento(
         "p",
         "Intento invalido ingrese un numero o un numero diferente a 0"
