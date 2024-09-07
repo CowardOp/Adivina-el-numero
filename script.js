@@ -10,7 +10,7 @@ let numeroMaximo = 5; // Este se sobreescribirá con el valor del input
 const sortNumberMax = () => {
   sortButton.addEventListener("click", () => {
     const validar = parseInt(sortNumber.value); // Obtener el valor del input
-    if (validar <= 0 || isNaN(validar)) {
+    if (isNaN(validar)) {
       alert("Número inválido, intente nuevamente");
     } else {
       sortCont.classList.add("ocult");
