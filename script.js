@@ -10,7 +10,7 @@ let numeroMaximo = 5; // Este se sobreescribirá con el valor del input
 const sortNumberMax = () => {
   sortButton.addEventListener("click", () => {
     const validar = parseInt(sortNumber.value); // Obtener el valor del input
-    if (isNaN(validar)) {
+    if (validar === 0 || isNaN(validar)) {
       alert("Número inválido, intente nuevamente");
     } else {
       sortCont.classList.add("ocult");
@@ -41,7 +41,7 @@ function verificarIntento() {
   } else {
     if (numeroDeUsuario < numeroSecreto) {
       asignarTextoElemento("p", "Fallaste, el número es mayor");
-    } else if (numeroDeUsuario === 0 || isNaN(numeroDeUsuario)) {
+    } else if (isNaN(numeroDeUsuario)) {
       asignarTextoElemento(
         "p",
         "Intento invalido ingrese un numero o un numero diferente a 0"
