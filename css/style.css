@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@100..900&family=SUSE:wght@100..800&display=swap");
+
+* {
+  font-family: "SUSE", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 600;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body {
+  background-image: url("../img/code.png");
+}
+
+div {
+  border-radius: 12px;
+}
+.card_body {
+  background: #f4f4f405;
+  border-radius: 12px;
+  border: 2px solid #3228de;
+  backdrop-filter: blur(2px);
+}
+.title {
+  font-size: 5rem;
+  font-family: "Big Shoulders Inline Text", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.code {
+  object-fit: cover;
+}
+.sort_count {
+  transition: all 0.5s linear;
+  animation: moving 1s linear infinite alternate;
+}
+.sort_count.ocult {
+  opacity: 0;
+  transform: translateY(-1000px);
+}
+
+@keyframes moving {
+  from {
+    transform: translateY(2px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

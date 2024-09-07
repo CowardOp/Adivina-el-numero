@@ -9,32 +9,53 @@
       href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/main.css" />
     <title>JS Game</title>
   </head>
 
   <body>
-    <div class="container">
-      <div class="container__contenido">
-        <div class="container__informaciones">
-          <div class="container__texto">
-            <h1></h1>
-            <p class="texto__parrafo"></p>
+    <div class="w-full h-screen flex justify-center items-center">
+      <div
+        class="relatyve card_body hero relative w-3/4 h-3/4 text-black flex items-center justify-center text-white"
+        style="background-image: url(./img/adivina.jpg)"
+      >
+        <div
+          id="sortCont"
+          class="sort_count absolute py-3 w-2/4 flex flex-col gap-3 items-center justify-center bg-sky-200 z-10 bg-opacity-80"
+        >
+          <h2 class="text-4xl text-center text-black">
+            Elije el numero <br />
+            a sortear
+          </h2>
+          <input
+            type="number"
+            id="sortNumber"
+            class="input w-1/2 text-center bg-slate-400 text-3xl"
+          />
+          <button id="sortButton" class="btn btn-outline btn-primary">
+            Sortear
+          </button>
+        </div>
+        <div
+          class="flex flex-col px-3 w-full gap-5 justify-center hero-overlay bg-opacity-50"
+        >
+          <div class="">
+            <h1 class="title">Adivina el numero</h1>
+            <p class=""></p>
           </div>
           <input
             id="valorUsuario"
             type="number"
             min="1"
             max="10"
-            class="container__input"
+            class="input w-1/4 text-3xl"
           />
-          <div class="chute container__botones">
-            <button onclick="verificarIntento();" class="container__boton">
-              Intentar
-            </button>
+          <div class="">
+            <button onclick="verificarIntento();" class="btn">Intentar</button>
             <button
               onclick="volverAIniciar()"
-              class="container__boton"
+              class="btn"
               id="reiniciar"
               disabled
             >
@@ -42,11 +63,6 @@
             </button>
           </div>
         </div>
-        <img
-          src="./img/adivina.jpg"
-          alt="Una persona mirando a la izquierda"
-          class="container__imagen"
-        />
       </div>
     </div>
 
